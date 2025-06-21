@@ -1,0 +1,533 @@
+<!DOCTYPE html> 
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ms XV años - María de los Ángeles Quizhpi Macías</title>
+
+  <!-- Tipografía elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #220038;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #ffeaa7;
+    }
+
+    /* Contenedor texto principal */
+    .titulo {
+      position: absolute;
+      top: 5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #ffeaa7;
+      user-select: none;
+      animation: glow 3s ease-in-out infinite alternate;
+      cursor: default;
+      z-index: 10;
+      line-height: 1.3;
+    }
+
+    .titulo .grande {
+      font-size: 6.5vh; /* Un poco más grande */
+      font-weight: 700;
+    }
+
+    .titulo .normal {
+      font-size: 4vh; /* Más pequeño */
+      font-weight: 400;
+      margin-top: 0.1em;
+    }
+
+    /* Enlace "Click" */
+    .titulo a {
+      display: inline-block;
+      color: #ffd966;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 5.5vh;
+      margin-top: 0.5em;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 2px #fff8);
+    }
+
+    .titulo a:hover,
+    .titulo a:focus {
+      color: #fff;
+      border-bottom-color: #fff;
+      text-shadow: 0 0 6px #fff;
+      filter: drop-shadow(0 0 6px #fff);
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow:
+          0 0 5px #ffeaa7,
+          0 0 10px #ffd966,
+          0 0 15px #ffb347,
+          0 0 20px #ff9933;
+        color: #ffeaa7;
+      }
+
+      100% {
+        text-shadow:
+          0 0 10px #fff,
+          0 0 20px #fff,
+          0 0 30px #fff,
+          0 0 40px #ffcc80;
+        color: #fff3b0;
+      }
+    }
+
+    /* Flor y sus partes */
+
+    .flower {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      animation: float 3s ease-in-out infinite;
+      position: relative;
+      z-index: 5;
+    }
+
+    .flower__sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    .flower__sparkle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: linear-gradient(#FFF, #F5FCCD);
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+    }
+
+    .flower__sparkle:nth-child(1) {
+      top: 10%;
+      left: 40%;
+    }
+
+    .flower__sparkle:nth-child(2) {
+      top: 25%;
+      left: 20%;
+    }
+
+    .flower__sparkle:nth-child(3) {
+      top: 40%;
+      left: 30%;
+    }
+
+    .flower__sparkle:nth-child(4) {
+      top: 50%;
+      left: 10%;
+    }
+
+    .flower__sparkle:nth-child(5) {
+      top: 80%;
+      right: 30%;
+    }
+
+    .flower__sparkle:nth-child(6) {
+      top: 70%;
+      left: 20%;
+    }
+
+    .flower__sparkle:nth-child(7) {
+      top: 60%;
+      right: 20%;
+    }
+
+    .flower__sparkle:nth-child(8) {
+      top: 35%;
+      right: 20%;
+    }
+
+    .flower__wrapper {
+      position: relative;
+      padding: 0vh 11vh;
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(#FFF -100%, transparent);
+      overflow: hidden;
+      z-index: 4;
+    }
+
+    .flower__wrapper:before {
+      content: '';
+      position: absolute;
+      top: 4%;
+      left: 4%;
+      display: block;
+      width: 92%;
+      height: 96%;
+      background: radial-gradient(circle at top left, #FFF -800%, transparent);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .flower__wrapper:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, #FFF -800%, transparent);
+    }
+
+    .flower__head {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 20vh;
+      height: 23vh;
+      margin-bottom: -8vh;
+      transform: rotateX(75deg);
+    }
+
+    .flower__petal {
+      position: absolute;
+      bottom: -58%;
+      width: 14vh;
+      height: 19vh;
+    }
+
+    .flower__petal:after {
+      content: '';
+      position: relative;
+      top: 0rem;
+      left: 60%;
+      display: block;
+      width: 2px;
+      height: 80%;
+      background: #F5FCCD;
+      transform: rotate(45deg);
+    }
+
+    .flower__petal--left {
+      left: -19%;
+      border-radius: 0 50% 40% 50%;
+      background: linear-gradient(135deg, #F5FCCD, #ff7d66);
+      transform-origin: 100% 100%;
+    }
+
+    .flower__petal--left:after {
+      left: unset;
+      right: -40%;
+      transform: rotate(135deg);
+    }
+
+    .flower__petal--right {
+      right: -18%;
+      border-radius: 50% 0 50% 40%;
+      background: linear-gradient(-135deg, #F5FCCD, #ff7d66);
+      transform-origin: 0 100%;
+    }
+
+    .flower__petal--front {
+      transform: scaleY(-1);
+    }
+
+    .flower__center {
+      position: relative;
+      width: 60%;
+      height: 74%;
+      background: linear-gradient(#976a5a, #3e1e12);
+      border-radius: 50% 50% 35% 35%;
+      top: 112%;
+    }
+
+    .flower__seeds {
+      position: absolute;
+      bottom: 2vh;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-bottom: 3vh;
+    }
+
+    .flower__seed {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: #FFF;
+    }
+
+    .flower__seed:nth-child(1) {
+      top: 60%;
+      left: 40%;
+    }
+
+    .flower__seed:nth-child(2) {
+      top: 40%;
+      left: 60%;
+    }
+
+    .flower__seed:nth-child(3) {
+      top: 50%;
+      left: 50%;
+    }
+
+    .flower__seed:nth-child(4) {
+      top: 60%;
+      left: 60%;
+    }
+
+    .flower__seed:nth-child(5) {
+      top: 40%;
+      left: 40%;
+    }
+
+    .flower__seed:nth-child(6) {
+      top: 50%;
+      left: 30%;
+    }
+
+    .flower__seed:nth-child(7) {
+      top: 30%;
+      left: 50%;
+    }
+
+    .flower__seed:nth-child(8) {
+      top: 70%;
+      left: 50%;
+    }
+
+    .flower__seed:nth-child(9) {
+      top: 50%;
+      left: 70%;
+    }
+
+    .flower__steam-wrapper {
+      position: relative;
+      width: 1.5vh;
+      height: 43vh;
+    }
+
+    .flower__steam-wrapper:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -200%;
+      width: 500%;
+      height: 10vh;
+      border-radius: 0 0 50% 50%;
+      background: linear-gradient(#2a0754, #975dd5);
+    }
+
+    .flower__leaf {
+      position: absolute;
+      width: 400%;
+      height: 15%;
+      background: #80c0a1;
+      border-radius: 50% 0 50% 0;
+    }
+
+    .flower__leaf:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #80c0a1;
+      transform: rotate(-45deg);
+      filter: brightness(1);
+    }
+
+    .flower__leaf--first {
+      bottom: 25%;
+      left: 100%;
+      background: linear-gradient(-135deg, #80c0a1, #F5FCCD);
+      transform-origin: -10%;
+    }
+
+    .flower__leaf--second {
+      top: 30%;
+      right: 100%;
+      background: linear-gradient(45deg, #80c0a1, #F5FCCD);
+      transform: scaleY(-1);
+      transform-origin: 110%;
+      z-index: 1;
+    }
+
+    .flower__steam {
+      position: relative;
+      width: 100%;
+      height: 94%;
+      background: linear-gradient(#000038, #80c0a1, #F5FCCD);
+      border-radius: 0 0 1rem 0;
+      overflow: hidden;
+
+    }
+
+    .flower__steam-end {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4vh;
+      background: linear-gradient(#ff7d66, #F5FCCD);
+      border-radius: 50% 20% 50% 0;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Lluvia de brillo en el fondo */
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .rain__drop {
+      position: absolute;
+      background: white;
+      opacity: 0.2;
+      border-radius: 50%;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh);
+        opacity: 0.2;
+      }
+
+      80% {
+        opacity: 0.2;
+      }
+
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="titulo" role="banner" aria-label="Texto principal">
+    <div class="grande">Ms XV años</div>
+    <div class="normal">María de los Ángeles Quizhpi Macías</div>
+    <a href="https://huellacinco.my.canva.site/invitacion-xv-maria-de-los-angeles" target="_blank" rel="noopener noreferrer" aria-label="Click para más información">Click</a>
+  </div>
+
+  <div class="flower__wrapper">
+    <div class="flower__sparkles">
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+      <div class="flower__sparkle"></div>
+    </div>
+    <div class="flower">
+      <div class="flower__steam-wrapper">
+        <div class="flower__leaf flower__leaf--first"></div>
+        <div class="flower__leaf flower__leaf--second"></div>
+        <div class="flower__steam">
+          <div class="flower__steam-end"></div>
+        </div>
+      </div>
+      <div class="flower__head flower__head--main">
+        <div class="flower__petal flower__petal--back flower__petal--left flower__petal--back-left"></div>
+        <div class="flower__petal flower__petal--back flower__petal--left2 flower__petal--back-left2"></div>
+        <div class="flower__petal flower__petal--back flower__petal--mid flower__petal--back-mid"></div>
+        <div class="flower__petal flower__petal--back flower__petal--right flower__petal--back-right"></div>
+        <div class="flower__petal flower__petal--front flower__petal--left flower__petal--front-left"></div>
+        <div class="flower__petal flower__petal--back flower__petal--bottom flower__petal--back-bottom"></div>
+        <div class="flower__petal flower__petal--front flower__petal--right flower__petal--front-right"></div>
+        <div class="flower__center">
+          <div class="flower__seeds">
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+            <div class="flower__seed"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lluvia de brillo -->
+  <div class="rain" aria-hidden="true"></div>
+
+  <script>
+    // Generar lluvia de partículas brillantes
+    const rainContainer = document.querySelector('.rain');
+    const dropsCount = 80; // Cantidad de partículas
+
+    for (let i = 0; i < dropsCount; i++) {
+      const drop = document.createElement('div');
+      drop.classList.add('rain__drop');
+
+      // Tamaño aleatorio entre 1px y 3px
+      const size = (Math.random() * 2) + 1;
+      drop.style.width = size + 'px';
+      drop.style.height = size + 'px';
+
+      // Posición horizontal aleatoria
+      drop.style.left = (Math.random() * 100) + 'vw';
+
+      // Delay y duración aleatorios para que la lluvia no sea homogénea
+      const delay = Math.random() * 10;
+      const duration = 5 + Math.random() * 5;
+
+      drop.style.animationDelay = delay + 's';
+      drop.style.animationDuration = duration + 's';
+
+      rainContainer.appendChild(drop);
+    }
+  </script>
+</body>
+
+</html>
